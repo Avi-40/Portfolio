@@ -71,7 +71,6 @@ a {
 .intro {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
 
   gap: 5rem;
@@ -84,6 +83,7 @@ a {
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+  width: 100vw;
 }
 
 .btn {
@@ -596,6 +596,7 @@ footer {
   margin-top: -1px;
   background-color: #343d68;
   padding: 5rem;
+  z-index: -2;
 }
 
 .footer-wrapper {
@@ -613,6 +614,7 @@ footer {
   color: #535c87;
   user-select: none;
   font-size: 5em;
+  z-index: -1;
 }
 
 .link-wrapper {
@@ -636,6 +638,13 @@ footer {
 }
 
 @media (max-width: 1200px) {
+  .navBar {
+    width: 100vw;
+  }
+  .title {
+    min-width: 250px;
+  }
+
   .intro-right {
     display: none;
   }
@@ -712,6 +721,20 @@ footer {
     gap: 100px;
     left: 1.7rem;
     margin: 10rem auto;
+  }
+  .form {
+    width: 100%;
+  }
+  footer {
+    padding: 5%;
+  }
+  .footer-faded-text {
+    font-size: 4rem;
+  }
+  .footer-wrapper {
+    width: 80vw;
+    flex-wrap: wrap;
+    margin: 0;
   }
 }
 @media (max-width: 600px) {
