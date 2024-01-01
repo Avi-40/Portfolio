@@ -3,11 +3,12 @@ const { config: dotenvConfig } = require("dotenv");
 const path = require("path");
 const { fileURLToPath } = require("url");
 const Mailjet = require("node-mailjet");
+const serverless = require("serverless-http");
 
 dotenvConfig();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5173;
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
 
@@ -62,3 +63,8 @@ app.post("/submitForm", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+// app.use(`/.netlify/functions/api`, router);
+
+module.exports = app;
+module.exports.handler = serverless(app);

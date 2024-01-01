@@ -3,13 +3,16 @@
     "@sendgrid/mail": "^8.1.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "node-mailjet": "^6.0.5"
+    "netlify-cli": "^17.10.2",
+    "netlify-lambda": "^2.0.16",
+    "node-mailjet": "^6.0.5",
+    "serverless-http": "^3.2.0"
   },
   "name": "implementation",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/api.js",
   "scripts": {
-    "start": "node index.js"
+    "build": "netlify deploy --prod"
   },
   "keywords": [],
   "author": "",
